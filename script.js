@@ -222,6 +222,7 @@ function displayHighScore(){
 }
 function pointSound(){
     let pointAudio = new Audio("./sounds/point.mp3");
+    pointAudio.volume = 0.2;
     pointAudio.play();
 }
 function gameOverSound(){
