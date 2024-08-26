@@ -87,16 +87,18 @@ i{
     canvas{
         /* width: 300px;
         height: 300px; */
-        transform: scale(0.7);
+        transform: scale(0.6);
         align-self: center;
+        /* margin-left: 30px; */
     }
 }
 @media (375px < width) {
     canvas{
         /* width: 400px;
         height: 400px; */
-        transform: scale(0.8);
+        transform: scale(0.7);
         align-self: center;
+        /* margin-right: 40px; */
     }
 }
 @media (width > 768px) {
