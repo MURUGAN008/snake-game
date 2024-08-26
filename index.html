@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <main>
+        <h1 class="game-name">Snake Game</h1>
+        <p class="info">Press space to pause and continue</p>
+        <div class="game-screen">
+            <canvas id="game-board" height="500" width="500"></canvas>
+            <p class="score">Score: <span class="score-value">0</span></p>
+            <p class="high-score">High Score: <span class="high-score-value">0</span></p>
+        </div>
+        <div class="controller hide-on-pc">
+            <div class="btn up-btn"><i class="fa-solid fa-caret-up"></i></div>
+            <div class="btn left-btn"><i class="fa-solid fa-caret-left"></i></div>
+            <div class="btn right-btn"><i class="fa-solid fa-caret-right"></i></div>
+            <div class="btn down-btn"><i class="fa-solid fa-caret-down"></i></div>
+        </div>
+    </main>
+</body>
+</html>

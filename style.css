@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(243, 247, 54);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main h1{
+    font-size: 3rem;
+    text-transform:uppercase;
+    text-align: center;
+    margin-top: 50px;
+    filter: drop-shadow(2px 2px 0px white);
+}
+main .info{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+main .game-screen{
+    text-align: center;
+}
+main .game-screen canvas{
+    margin-top: 20px;
+    border-radius: 3px;
+}
+main .game-screen p{
+    font-size: 2rem;
+    margin-top: 10px;
+}
+main .game-screen p .score-value{
+    color: red;
+}
+.high-score-value{
+    color: darkblue;
+}
+.controller{
+    width: 240px;
+    height: 150px;
+    margin: 20px auto 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.controller .btn{
+    border: 1px solid;
+    display: grid;
+    place-items: center center;
+    background-color: black;
+}
+.controller .up-btn{
+    grid-column-start: 2;
+}
+.controller .left-btn{
+    grid-column-start: 1;
+    
+}
+.controller .right-btn{
+    grid-column-start: 3;
+}
+.controller .down-btn{
+    grid-column-start: 2;
+}
+i{
+    font-size: 3rem;
+    color: white;
+}
+@media (width<=375px) {
+    canvas{
+        /* width: 300px;
+        height: 300px; */
+        transform: scale(1);
+    }
+}
+@media (375px < width) {
+    canvas{
+        /* width: 400px;
+        height: 400px; */
+        transform: scale(0.8);
+    }
+}
+@media (width > 768px) {
+    canvas{
+        /* width: 500px;
+        height: 500px; */
+        transform: scale(1);
+    }
+    .hide-on-pc{
+        display: none;
+    }
+}
