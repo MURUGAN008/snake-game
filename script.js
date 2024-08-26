@@ -131,6 +131,7 @@ function moveSnake(){
     let head = {x:snake[0].x+xVol,y:snake[0].y+yVol}
     snake.unshift(head)
     if(snake[0].x==foodX && snake[0].y==foodY){
+        pointSound();
         createFood();
         score+=1;
     }
@@ -160,6 +161,7 @@ function nextTick(){
     }
     else{
         clearBoard();
+        gameOverSound();
         context.font = "bold 50px serif";
         context.fillStyle = 'white';
         context.textAlign = 'center';
@@ -217,4 +219,12 @@ function checkHighScore(){
 }
 function displayHighScore(){
     highScoreElement.textContent = highScore;
+}
+function pointSound(){
+    let pointAudio = new Audio("./sounds/point.mp3");
+    pointAudio.play();
+}
+function gameOverSound(){
+    let gameOverAudio = new Audio("./sounds/game-over.mp3");
+    gameOverAudio.play();
 }
