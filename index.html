@@ -11,11 +11,15 @@
 <body>
     <main>
         <h1 class="game-name">Snake Game</h1>
-        <p class="info">Press space to pause and continue</p>
+        <p class="info hide-on-mobile-tablet">Press space to pause and continue</p>
         <div class="game-screen">
             <canvas id="game-board" height="500" width="500"></canvas>
             <p class="score">Score: <span class="score-value">0</span></p>
             <p class="high-score">High Score: <span class="high-score-value">0</span></p>
+        </div>
+        <div class="pause-btn hide-on-pc">
+            <i class="fa-solid fa-pause"></i>
+            <!-- <i class="fa-solid fa-play"></i> -->
         </div>
         <div class="controller hide-on-pc">
             <div class="btn up-btn"><i class="fa-solid fa-caret-up"></i></div>

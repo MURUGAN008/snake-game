@@ -47,6 +47,22 @@ main .game-screen p .score-value{
 .high-score-value{
     color: darkblue;
 }
+.pause-btn{
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-left: 30%;
+}
+.pause-btn:has(.fa-play){
+    background-color: rgba(0, 0, 0, 1);
+    & i{
+        color: white;
+    }
+}
 .controller{
     width: 340px;
     height: 250px;
@@ -79,7 +95,7 @@ main .game-screen p .score-value{
 .controller .down-btn{
     grid-column-start: 2;
 }
-i{
+.controller i{
     font-size: 3rem;
     color: white;
 }
@@ -91,6 +107,9 @@ i{
         align-self: center;
         /* margin-left: 30px; */
     }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
 }
 @media (375px < width) {
     canvas{
@@ -99,6 +118,9 @@ i{
         transform: scale(0.7);
         align-self: center;
         /* margin-right: 40px; */
+    }
+    .hide-on-mobile-tablet{
+        display: none;
     }
 }
 @media (width > 768px) {
@@ -110,5 +132,8 @@ i{
     }
     .hide-on-pc{
         display: none;
+    }
+    .hide-on-mobile-tablet{
+        display: block;
     }
 }

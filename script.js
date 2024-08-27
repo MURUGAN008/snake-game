@@ -7,6 +7,7 @@ let newHighScore = false;
 let score = 0;
 let active = true;
 let started = false;
+let spacePressed = false;
 let WIDTH
 let HEIGHT
 let UNIT;
@@ -28,17 +29,20 @@ let xVol = 25;
 let yVol = 0;
 startGame();
 window.addEventListener('keydown', keyPress);
-readyControlls();
-function readyControlls(){
-
-    readyButtons();
-}
+readyButtons();
 function keyPress(event){
     if(!started){
         started = true;
         nextTick();
     }
-
+    if(event.keyCode === 32){
+        if(!spacePressed)
+            spacePressed=true
+        else{
+            spacePressed=false;
+            nextTick();
+        }        
+    }
     const LEFT = 37;
     const UP = 38;
     const RIGHT = 39;
@@ -88,7 +92,20 @@ function readyButtons(){
         })
     }
 }
-
+// check for pause btn
+let pauseBtn = document.querySelector(".pause-btn")
+pauseBtn.addEventListener("click",()=>{
+    if(pauseBtn.children[0].classList.contains("fa-pause")){
+        pauseBtn.children[0].classList.replace("fa-pause", "fa-play");
+        spacePressed = true;
+        nextTick();
+    }
+    else{
+        pauseBtn.children[0].classList.replace("fa-play", "fa-pause");
+        spacePressed = false;
+        nextTick();
+    }
+})
 function setCanvasSize(){
     WIDTH=500;
     HEIGHT=500;
@@ -146,7 +163,7 @@ function clearBoard(){
 }
 
 function nextTick(){
-    if(active){
+    if(active && !spacePressed){
         setTimeout(()=>{
             clearBoard();
             displayFood();
@@ -158,6 +175,14 @@ function nextTick(){
             checkHighScore();
             nextTick();
         },speed)
+    }
+    else if(spacePressed){
+        clearBoard();
+        context.font="bold 50px serif";
+        context.fillStyle="white";
+        context.textAlign="center";
+        context.fillText("Pause!!",WIDTH/2,HEIGHT/2);
+        // nextTick();
     }
     else{
         clearBoard();
