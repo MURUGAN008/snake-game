@@ -48,6 +48,9 @@ main .game-screen p .score-value{
     color: darkblue;
 }
 .pause-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 30px;
     border: 1px solid rgba(0, 0, 0, 1);
@@ -64,6 +67,7 @@ main .game-screen p .score-value{
     }
 }
 .controller{
+    position: relative;
     width: 340px;
     height: 250px;
     /* margin: 20px auto 10px; */
@@ -95,7 +99,7 @@ main .game-screen p .score-value{
 .controller .down-btn{
     grid-column-start: 2;
 }
-.controller i{
+.controller .btn i{
     font-size: 3rem;
     color: white;
 }
